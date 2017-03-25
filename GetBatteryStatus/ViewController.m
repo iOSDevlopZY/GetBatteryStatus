@@ -13,6 +13,7 @@
 @interface ViewController ()
 {
     NSString *state1;
+    HYCircleProgressView *progressView;
     UILabel *label6;
 }
 
@@ -33,13 +34,17 @@
     [UIDevice currentDevice].batteryMonitoringEnabled=true;
     int level=[self getBatteryLevel];
     CGFloat percentageLevel=level/100.0f;
-    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 20, ScreenWidth, 44)];
-    label.text=@"利用runtime测得电池电量为:";
+    UILabel *label0 = [[UILabel alloc]initWithFrame:CGRectMake(0, 20, ScreenWidth, 44)];
+    label0.text=@"利用runtime测得电池电量为:";
+    label0.textAlignment=NSTextAlignmentCenter;
+    [self.view addSubview:label0];
+    
+    UILabel *label = [[UILabel alloc]initWithFrame:CGRectMake(0, 68, ScreenWidth, 44)];
+    label.text=@"充满状态下可以查看电池损耗度";
     label.textAlignment=NSTextAlignmentCenter;
     [self.view addSubview:label];
-    
     //初始化HYCircleProgressView
-    HYCircleProgressView *progressView = [[HYCircleProgressView alloc]initWithFrame:CGRectMake(ScreenWidth*0.2, ScreenHeight*0.2, ScreenWidth*0.6, ScreenHeight*0.3)];
+    progressView = [[HYCircleProgressView alloc]initWithFrame:CGRectMake(ScreenWidth*0.2, ScreenHeight*0.2, ScreenWidth*0.6, ScreenHeight*0.3)];
     [self.view addSubview:progressView];
     
     [progressView setBackgroundStrokeColor:[UIColor lightGrayColor]];
@@ -84,6 +89,8 @@
     label6 = [[UILabel alloc]initWithFrame:CGRectMake(ScreenWidth*0.6, ScreenHeight*0.75, ScreenWidth*0.35, 44)];
     NSTimer *timer=[NSTimer timerWithTimeInterval:1 target:self selector:@selector(check) userInfo:nil repeats:YES];
     [[NSRunLoop mainRunLoop]addTimer:timer forMode:NSRunLoopCommonModes];
+    NSTimer *timer1=[NSTimer timerWithTimeInterval:1 target:self selector:@selector(getBatteryLevel) userInfo:nil repeats:YES];
+    [[NSRunLoop mainRunLoop]addTimer:timer1 forMode:NSRunLoopCommonModes];
     label6.text=@"检测中。。。";
     label6.textAlignment=NSTextAlignmentRight;
     label6.font=[UIFont boldSystemFontOfSize:15.0f];
