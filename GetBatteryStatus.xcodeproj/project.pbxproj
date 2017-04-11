@@ -220,7 +220,7 @@
 				TargetAttributes = {
 					0C22F5D31E849F6B00AC69AA = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = QCJXTE3FLY;
+						DevelopmentTeam = 3JKB9XZMQU;
 						ProvisioningStyle = Automatic;
 					};
 					0C22F5EC1E849F6C00AC69AA = {
@@ -443,7 +443,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = QCJXTE3FLY;
+				DEVELOPMENT_TEAM = 3JKB9XZMQU;
 				INFOPLIST_FILE = GetBatteryStatus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mac.GetBatteryStatus;
@@ -455,7 +455,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = QCJXTE3FLY;
+				DEVELOPMENT_TEAM = 3JKB9XZMQU;
 				INFOPLIST_FILE = GetBatteryStatus/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mac.GetBatteryStatus;
